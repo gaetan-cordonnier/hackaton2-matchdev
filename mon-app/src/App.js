@@ -11,6 +11,7 @@ function App() {
       <Header />
       <Connection />
       <SeConnecter />
+      <Sinscrire />
     </div>
   );
 

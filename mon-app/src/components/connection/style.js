@@ -22,6 +22,7 @@ export const Title = styled.h2 `
 margin-bottom: 5vh;
 color: #FD0F6D;
 
+
 `
 export const Button = styled.button `
 
