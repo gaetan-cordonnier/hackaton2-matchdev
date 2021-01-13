@@ -1,13 +1,15 @@
 import React from "react";
-import Header from "./components/header/";
-import "./App.css";
+import { Reset } from "styled-reset";
 
-function App() {
+import Header from "./components/header/";
+import CardCompany from "./components/card_company";
+
+export default function App() {
 	return (
-		<div className="App">
+		<div>
+			<Reset />
 			<Header />
+			<CardCompany />
 		</div>
 	);
 }
-
-export default App;
