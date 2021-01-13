@@ -1,16 +1,20 @@
 import React from "react";
-import {  } from "./style";
+import {} from "./style";
 
 const SeConnecter = () => {
-    return (
+  return (
+    <div>
       <div>
-        <Container>
-          <Title>SE CONNECTER</Title>
-          <Button>SE CONNECTER</Button>
-          <Text>OU</Text>
-          <Button>CONNECTION</Button>
-        </Container>
+        <form>
+          <h2>SE CONNECTER</h2>
+          <label>
+            <input type="text" email="email" />
+            <input type="text" emapassword="password" />
+          </label>
+          <input type="submit" value="SE CONNECTER" />
+        </form>
       </div>
-    );
-  };
-  export default SeConnecter;
+    </div>
+  );
+};
+export default SeConnecter;

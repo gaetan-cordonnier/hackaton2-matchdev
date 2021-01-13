@@ -1,16 +1,16 @@
 import React from "react";
-import { Container, Title, Button, Text } from "./style";
+import { Container, Title, Button, Text, Connect } from "./style";
 
 const Connection = () => {
   return (
-    <div>
+    <Connect>
+      <Title>MATCH DEV</Title>
       <Container>
-        <Title>Connection</Title>
         <Button>SE CONNECTER</Button>
         <Text>OU</Text>
         <Button>S'INSCRIRE</Button>
       </Container>
-    </div>
+    </Connect>
   );
 };
 export default Connection;
