@@ -6,18 +6,18 @@ export const Container = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	background-color: #220bab;
-	height: 70px;
+	height: 9vh;
 
 	.match {
-		height: 50px;
-		margin-left: 20px;
+		height: 7vh;
+		margin-left: 3vw;
 	}
 
 	.logo {
-		height: 30px;
+		height: 4vh;
 	}
 	.profile {
-		height: 50px;
-		margin-right: 20px;
+		height: 7vh;
+		margin-right: 3vw;
 	}
 `;
