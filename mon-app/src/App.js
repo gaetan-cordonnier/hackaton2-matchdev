@@ -26,8 +26,7 @@ export default function App() {
 					<Route exact path="/seconnecter" component={SeConnecter} />
 					<Route exact path="/cards" component={CardCompany} />
 					<Route exact path="/match" component={Match} />
-          <Route exact path ="/profil" components={ProfilPage} />
-
+                    <Route exact path ="/profil" component={ProfilPage} />
 				</Switch>
 			</Router>
 		</div>

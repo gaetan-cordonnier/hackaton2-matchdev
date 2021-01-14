@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Device } from "../../assets/device/device";
+import { Device } from "../../assets/device/Device";
 
 export const Page = styled.div`
   @media ${Device.mobile} {
