@@ -52,9 +52,9 @@ const Sinscrire = () => {
           <option value="freelance">Freelance</option>
         </select>
 
-        <label>Ville</label>
-        <input name="ville" ref={register({ required: true })} />
-        {errors.ville && <Mandatory>Ce champs est obligatoire</Mandatory>}
+        <label>Code Postal</label>
+        <input name="codePostal" ref={register({ required: true })} />
+        {errors.codePostal && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
         <label>Années de code</label>
         <input name="année de code" ref={register({ required: true })} />

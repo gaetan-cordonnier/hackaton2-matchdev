@@ -45,7 +45,7 @@ export const FormContainer = styled.form`
 
 export const Label = styled.label`
 	color: white;
-	font-size: 1rem;
+	font-size: 1.5rem;
 	text-align: center;
 	margin: 3vw;
 `;
