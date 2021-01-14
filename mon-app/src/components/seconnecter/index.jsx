@@ -1,19 +1,22 @@
 import React from "react";
-import {} from "./style";
+import {Title, Container, Submit, FormContainer, Label} from "./style";
 
 const SeConnecter = () => {
   return (
     <div>
-      <div>
-        <form>
-          <h2>SE CONNECTER</h2>
-          <label>
+      <Container>
+        <Title>MATCH DEV</Title>
+        <FormContainer>
+
+         
+          <Label>Email</Label>
             <input type="text" email="email" />
+          <Label>Mot de passe</Label>
             <input type="text" emapassword="password" />
-          </label>
-          <input type="submit" value="SE CONNECTER" />
-        </form>
-      </div>
+       
+          <Submit type="submit" value="SE CONNECTER" />
+        </FormContainer>
+      </Container>
     </div>
   );
 };
