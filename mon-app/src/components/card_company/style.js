@@ -1,43 +1,46 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-	background: linear-gradient(#f9f9f9, #d7d7d7);
-	text-align: center;
+	font-family: "Montserrat", sans-serif;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
+	background: linear-gradient(#f9f9f9, #d7d7d7);
+	text-align: center;
 	width: 100vw;
-	min-height: 91vh;
+	height: 1200px;
+	min-height: 100vh;
 	overflow: hidden;
-
-	h2 {
-		color: blue;
-	}
 
 	.swipe {
 		position: absolute;
 	}
 
 	.cardContainer {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
 		width: 90vw;
+		min-height: 1000px;
 		max-width: 360px;
-		height: 450px;
+		margin-top: 11vh;
+		margin-bottom: 1.5vh;
 		background-color: #fff;
-		box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
-		border-radius: 20px;
+		box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+		border-radius: 5px;
 	}
 
 	.card {
 		position: relative;
 		background-color: #fff;
-		width: 80vw;
-		margin-top: 5vw;
-		margin-left: 5vw;
-		max-width: 300px;
+		width: 83vw;
 		height: 300px;
+		max-width: 340px;
+		margin: 10px;
 		border: 1px solid #e6e6e6;
-		border-radius: 20px;
+		border-radius: 5px;
 		background-size: cover;
 		background-position: center;
 	}
@@ -50,24 +53,45 @@ export const Container = styled.div`
 	.swipe:last-of-type {
 	}
 
-	.card h3 {
+	.card h1 {
 		bottom: 0;
-		margin: 10px;
+		margin: 5px;
 		color: #fd1470;
 	}
 
-	.infoText {
-		width: 100%;
-		height: 28px;
-		justify-content: center;
-		display: flex;
-		color: #fff;
-		animation-name: popup;
-		animation-duration: 800ms;
+	.description {
+		position: relative;
+		background-color: #fff;
+		width: 83vw;
+		min-height: 300px;
+		max-width: 340px;
+		margin: 10px;
+		border: 1px solid #e6e6e6;
+		border-radius: 5px;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.description h2 {
+		color: #b7b7b7;
+		font-size: 1.2em;
+		margin: 10px;
+	}
+
+	.description p {
+		text-align: justify;
+		margin: 10px;
+	}
+
+	.bottom {
+		position: fixed;
+		bottom: 0;
+		height: 15vh;
+		background-color: rgba(200, 200, 200, 0.75);
 	}
 
 	.buttons {
-		margin: 20px;
+		margin: 10px;
 		display: flex;
 	}
 
@@ -88,6 +112,15 @@ export const Container = styled.div`
 
 	.buttons button:hover {
 		transform: scale(1.05);
+	}
+
+	.bottom h2 {
+		width: 100%;
+		justify-content: center;
+		display: flex;
+		color: #fd1470;
+		animation-name: popup;
+		animation-duration: 800ms;
 	}
 
 	@keyframes popup {
