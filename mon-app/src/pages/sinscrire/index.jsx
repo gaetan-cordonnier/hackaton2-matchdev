@@ -55,6 +55,7 @@ const Sinscrire = () => {
               value={selected}
               onChange={setSelected}
               labelledBy={"Select"}
+              ref={register({ required: true })}
             />
           </div>
 
