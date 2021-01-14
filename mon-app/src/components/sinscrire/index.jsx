@@ -1,17 +1,24 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import {FormContainer} from "./style";
-
+import { FormContainer } from "./style";
 
 const Sinscrire = () => {
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = (data) => console.log(data);
+
+  console.log(watch("example"));
+
   return (
     <div>
       <FormContainer onSubmit={handleSubmit(onSubmit)}>
         <h2>Compléte ton profil</h2>
+
         <label>Prénom</label>
-        <input name="prénom" ref={register({ required: true })} />
+        <input
+          name="example"
+          defaultValue="test"
+          ref={register({ required: true })}
+        />
         {errors.prénom && <span>Ce champs est obligatoire</span>}
 
         <label>Email</label>
@@ -81,7 +88,7 @@ const Sinscrire = () => {
         <input name="autre" ref={register({ required: true })} />
         {errors.autre && <span>Ce champs est obligatoire</span>}
 
-        <input type="submit" />
+        <input type="submit" value="ENVOYER" />
       </FormContainer>
     </div>
   );
