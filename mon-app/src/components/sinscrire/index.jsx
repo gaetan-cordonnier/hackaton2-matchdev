@@ -1,11 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { FormContainer, Mandatory } from "./style";
+import dataTechnos from "./dataTechnos.json";
+
+
 
 const Sinscrire = () => {
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = (data) => console.log(data);
-
   console.log(watch("example"));
 
   return (
@@ -30,10 +32,21 @@ const Sinscrire = () => {
         {errors.password && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
         <label>Technos</label>
-        <select></select>
+        <select >
+              <option>
+                Choix multiple
+              </option>
+  {dataTechnos.map(dataTechno =><option key={dataTechno.technos}>{dataTechno.technos}</option>)}
+            </select>
 
         <label>Technos visés</label>
-        <select></select>
+        <select>
+        <option>
+                Choix multiple
+              </option>
+  {dataTechnos.map(dataTechno =><option key={dataTechno.technos}>{dataTechno.technos}</option>)}
+            
+        </select>
 
         <label>Type de contrat</label>
         <select name="type fe contrat" ref={register({ required: true })}>
