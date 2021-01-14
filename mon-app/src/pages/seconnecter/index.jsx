@@ -2,18 +2,30 @@ import React, { useState } from "react";
 import { Title, Container, Submit, FormContainer, Label } from "./style";
 import { useForm } from "react-hook-form";
 import { Redirect } from "react-router-dom";
+import axios from "axios";
 
 const SeConnecter = () => {
-  const { register, handleSubmit, errors } = useForm();
-  const onSubmit = (data) => console.log(data);
-  const { loggedIn } = useState;
+  const { register, handleSubmit, watch, errors } = useForm();
+  const [loggedIn, setDataSend] = useState(false);
+
+  const signup = (formData) => {
+    axios
+      .post("http://localhost:5050/profile", formData)
+      .then(({ data }) => {
+        console.log("Profile created");
+        setDataSend(true);
+      })
+      .catch((err) => {
+        console.warn("Error");
+      });
+  };
 
   return (
     <div>
       {loggedIn ? (
         <Redirect to="/cards" />
       ) : (
-        <Container onSubmit={handleSubmit(onSubmit)}>
+        <Container onSubmit={handleSubmit(signup)}>
           <Title>MATCH DEV</Title>
           <FormContainer>
             <Label>Email</Label>
