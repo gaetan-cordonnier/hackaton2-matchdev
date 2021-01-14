@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { FormContainer, Mandatory } from "./style";
 import dataTechnos from "./dataTechnos.json";
+import MultiSelect from "react-multi-select-component";
 
 const Sinscrire = () => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => console.log(data);
+  const [selected, setSelected] = useState([]);
+
+  
   
 
   return (
@@ -23,16 +27,20 @@ const Sinscrire = () => {
         {errors.email && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
         <label>Mot de passe</label>
-        <input name="password" ref={register({ required: true })} />
-        {errors.password && <Mandatory>Ce champs est obligatoire</Mandatory>}
+        <input type="password" minlength="8" name="password" ref={register({ required: true })} />
+        {errors.password && <Mandatory>Minimun 8 caractères</Mandatory>}
 
-        <label>Technos</label>
-        <select>
-          <option>Choix multiple</option>
-          {dataTechnos.map((dataTechno) => (
-            <option key={dataTechno.technos}>{dataTechno.technos}</option>
-          ))}
-        </select>
+        <div>
+          <h1>Technos</h1>
+          <MultiSelect
+            options={dataTechnos}
+            value={selected}
+            onChange={setSelected}
+            labelledBy={"Select"}
+          />
+        </div>
+
+    
 
         <label>Type de contrat</label>
         <select name="type fe contrat" ref={register({ required: true })}>
@@ -48,7 +56,7 @@ const Sinscrire = () => {
         <input name="ville" ref={register({ required: true })} />
         {errors.ville && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
-        <label>Année de code</label>
+        <label>Années de code</label>
         <input name="année de code" ref={register({ required: true })} />
         {errors.anneeDeCode && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
