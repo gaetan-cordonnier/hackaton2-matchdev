@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { FormContainer } from "./style";
+import { FormContainer, Mandatory } from "./style";
 
 const Sinscrire = () => {
   const { register, handleSubmit, watch, errors } = useForm();
@@ -19,15 +19,15 @@ const Sinscrire = () => {
           defaultValue="test"
           ref={register({ required: true })}
         />
-        {errors.prénom && <span>Ce champs est obligatoire</span>}
+        {errors.prénom && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
         <label>Email</label>
         <input name="email" ref={register({ required: true })} />
-        {errors.email && <span>Ce champs est obligatoire</span>}
+        {errors.email && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
         <label>Mot de passe</label>
         <input name="password" ref={register({ required: true })} />
-        {errors.password && <span>Ce champs est obligatoire</span>}
+        {errors.password && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
         <label>Technos</label>
         <select></select>
@@ -55,15 +55,15 @@ const Sinscrire = () => {
 
         <label>Ville</label>
         <input name="ville" ref={register({ required: true })} />
-        {errors.ville && <span>Ce champs est obligatoire</span>}
+        {errors.ville && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
         <label>Année de code</label>
         <input name="année de code" ref={register({ required: true })} />
-        {errors.annéeDeCode && <span>Ce champs est obligatoire</span>}
+        {errors.anneeDeCode && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
         <label>Projet coup de coeur</label>
         <textarea name="projet" ref={register({ required: true })} />
-        {errors.projet && <span>Ce champs est obligatoire</span>}
+        {errors.projet && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
         {/*<label>Le plus important</label>
         <input type= "checkbox" name="choix" ref={register({ required: true })}>Ambiance</input>
@@ -74,19 +74,19 @@ const Sinscrire = () => {
         <input type= "checkbox" name="choix" ref={register({ required: true })}>Responsabilités</input>
         <input type= "checkbox" name="choix" ref={register({ required: true })}>Avantages</input>
         <input type= "checkbox" name="choix" ref={register({ required: true })}>Autre</input>
-        {errors.email && <span>Ce champs est obligatoire</span>}*/}
+        {errors.email && <Mandatory>Ce champs est obligatoire</Mandatory>}*/}
 
         <label>Salaire espéré</label>
         <input name="salaire" ref={register({ required: true })} />
-        {errors.salaire && <span>Ce champs est obligatoire</span>}
+        {errors.salaire && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
         <label>Langues</label>
         <input name="langues" ref={register({ required: true })} />
-        {errors.langues && <span>Ce champs est obligatoire</span>}
+        {errors.langues && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
         <label>Autre</label>
         <input name="autre" ref={register({ required: true })} />
-        {errors.autre && <span>Ce champs est obligatoire</span>}
+        {errors.autre && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
         <input type="submit" value="ENVOYER" />
       </FormContainer>
