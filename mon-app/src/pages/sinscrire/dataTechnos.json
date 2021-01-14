@@ -1,21 +1,27 @@
 [
     {
-        "technos": "JS"
+        "label": "JS",
+        "value": "JS"
     },
     {
-        "technos": "REACT"
+        "label": "REACT",
+        "value": "REACT"
     },
     {
-        "technos": "Node JS"
+        "label": "Node JS",
+        "value": "Node JS"
     },
     {
-        "technos": "mySQL"
+        "label": "mySQL",
+        "value": "mySQL"
     },
     {
-        "technos": "Angular"
+        "label": "Angular",
+        "value": "Angular"
     },
     {
-        "technos": "Git"
+        "label": "Git",
+        "value": "Git"
     }
 
 ]
