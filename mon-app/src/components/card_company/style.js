@@ -9,7 +9,7 @@ export const Container = styled.div`
 	background: linear-gradient(#f9f9f9, #d7d7d7);
 	text-align: center;
 	width: 100vw;
-	height: 1200px;
+	height: auto;
 	min-height: 100vh;
 	overflow: hidden;
 
@@ -23,10 +23,11 @@ export const Container = styled.div`
 		justify-content: flex-start;
 		align-items: center;
 		width: 90vw;
-		min-height: 1000px;
+		min-height: 100vh;
 		max-width: 360px;
 		margin-top: 11vh;
 		margin-bottom: 1.5vh;
+		padding-bottom: 20vh;
 		background-color: #fff;
 		box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
 		border-radius: 5px;
@@ -81,6 +82,7 @@ export const Container = styled.div`
 	.description p {
 		text-align: justify;
 		margin: 10px;
+		overflow: hidden;
 	}
 
 	.bottom {

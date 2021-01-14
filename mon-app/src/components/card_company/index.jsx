@@ -1,41 +1,14 @@
 import React, { useState, useMemo } from "react";
 import TinderCard from "react-tinder-card";
 import { Container } from "./style";
-
-const db = [
-	{
-		name: "UBIK",
-		imgUrl:
-			"https://process.filestackapi.com/resize=width:600/auto_image/compress/iB6MEKUeT5OUfHEAip0t",
-		url: "http://www.testurl.com",
-	},
-	{
-		name: "SYMBOL-IT",
-		imgUrl: "/images/company2.jpg",
-		url: "http://www.testurl.com",
-	},
-	{
-		name: "VADUO",
-		imgUrl: "/images/company3.png",
-		url: "http://www.testurl.com",
-	},
-	{
-		name: "NIRYO",
-		imgUrl: "/images/company4.png",
-		url: "http://www.testurl.com",
-	},
-	{
-		name: "RUNNING CARE",
-		imgUrl: "/images/company5.jpg",
-		url: "http://www.testurl.com",
-	},
-];
+import db from "./db.json";
 
 const alreadyRemoved = [];
-let companysState = db; // This fixes issues with updating companys state forcing it to use the current state and not the state that was active when the card was created.
+let companysState = db; // Cela résout les problèmes de mise à jour de l'état de l'entreprise qui l'oblige à utiliser l'état actuel et non l'état qui était actif lors de la création de la carte.
 
 export default function CardCompany() {
 	const [companys, setCompanys] = useState(db);
+	const [lastDirection, setLastDirection] = useState();
 
 	const childRefs = useMemo(
 		() =>
@@ -45,13 +18,14 @@ export default function CardCompany() {
 		[]
 	);
 
-	const swiped = (nameToDelete) => {
-		console.log("removing: " + nameToDelete);
+	const swiped = (direction, nameToDelete) => {
+		setLastDirection(direction);
+		console.log("Refusé: " + nameToDelete);
 		alreadyRemoved.push(nameToDelete);
 	};
 
 	const outOfFrame = (name) => {
-		console.log(name + " left the screen!");
+		console.log(name + "Vous avez postulé !");
 		companysState = companysState.filter((company) => company.name !== name);
 		setCompanys(companysState);
 	};
@@ -61,16 +35,16 @@ export default function CardCompany() {
 			(person) => !alreadyRemoved.includes(person.name)
 		);
 		if (cardsLeft.length) {
-			const toBeRemoved = cardsLeft[cardsLeft.length - 1].name; // Find the card object to be removed
-			const index = db.map((person) => person.name).indexOf(toBeRemoved); // Find the index of which to make the reference to
-			alreadyRemoved.push(toBeRemoved); // Make sure the next card gets removed next time if this card do not have time to exit the screen
-			childRefs[index].current.swipe(dir); // Swipe the card!
+			const toBeRemoved = cardsLeft[cardsLeft.length - 1].name; // Trouvez l'objet carte à supprimer
+			const index = db.map((person) => person.name).indexOf(toBeRemoved); // Trouvez l'index dont vous voulez faire référence
+			alreadyRemoved.push(toBeRemoved); // Assurez-vous que la carte suivante est retirée la prochaine fois si cette carte n'a pas le temps de quitter l'écran
+			childRefs[index].current.swipe(dir); // Swipe la card!
 		}
 	};
 
-	const urlCompany = companys.find((company) => company.url);
+	// const urlCompany = companys.find((company) => company.url);
 
-	console.log(urlCompany);
+	// console.log(urlCompany);
 
 	return (
 		<Container>
@@ -126,8 +100,15 @@ export default function CardCompany() {
 					<button onClick={() => swipe("left")}>Refuser</button>
 					<button onClick={() => swipe("right")}>Postuler</button>
 				</div>
-				<h2>Swipe à droite et a gauche,</h2>
-				<h2> ou clic pour démarer!</h2>
+				{lastDirection ? (
+					<h2 key={lastDirection} className="infoText">
+						You swiped {lastDirection}
+					</h2>
+				) : (
+					<h2 className="infoText">
+						Swipe a card or press a button to get started!
+					</h2>
+				)}
 			</div>
 		</Container>
 	);
