@@ -3,7 +3,7 @@ import { Reset } from "styled-reset";
 
 import Header from "./components/header/";
 import Connection from "./components/connection/index";
-import SeConnecter from "./components/sinscrire/index";
+import Sinscrire from "./components/sinscrire/index";
 import SeConnecter from "./components/seconnecter/index";
 import CardCompany from "./components/card_company/index";
 
