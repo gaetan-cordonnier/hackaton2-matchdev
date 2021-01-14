@@ -20,9 +20,9 @@ export default function Header() {
 					alt="Match Dev logo"
 				/>
 			</Link>
-			<Link to="/profile">
+			<Link to="/profil">
 				<img
-					to="/profile"
+				
 					className="profile"
 					src="/images/profile_user.svg"
 					alt="User Profile Icon"
