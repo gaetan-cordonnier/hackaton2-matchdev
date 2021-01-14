@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { FormContainer, Mandatory } from "./style";
 import dataTechnos from "./dataTechnos.json";
 
@@ -96,7 +97,9 @@ const Sinscrire = () => {
 				<input name="autre" ref={register({ required: true })} />
 				{errors.autre && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
-				<input type="submit" value="ENVOYER" />
+				<Link to="/cards">
+					<input type="submit" value="ENVOYER" />
+				</Link>
 			</FormContainer>
 		</div>
 	);

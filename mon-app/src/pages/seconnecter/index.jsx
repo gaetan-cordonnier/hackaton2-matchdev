@@ -1,5 +1,6 @@
 import React from "react";
 import { Title, Container, Submit, FormContainer, Label } from "./style";
+import { Link } from "react-router-dom";
 
 const SeConnecter = () => {
 	return (
@@ -12,7 +13,9 @@ const SeConnecter = () => {
 					<Label>Mot de passe</Label>
 					<input type="text" emapassword="password" />
 
-					<Submit type="submit" value="SE CONNECTER" />
+					<Link to="/cards">
+						<Submit type="submit" value="SE CONNECTER" />
+					</Link>
 				</FormContainer>
 			</Container>
 		</div>

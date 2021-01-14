@@ -7,6 +7,7 @@ import Connection from "./pages/connection/index";
 import Sinscrire from "./pages/sinscrire/index";
 import SeConnecter from "./pages/seconnecter/index";
 import CardCompany from "./pages/cards/index";
+import Match from "./pages/match/index";
 
 import "./App.css";
 
@@ -21,6 +22,7 @@ export default function App() {
 					<Route exact path="/sinscrire" component={Sinscrire} />
 					<Route exact path="/seconnecter" component={SeConnecter} />
 					<Route exact path="/cards" component={CardCompany} />
+					<Route exact path="/match" component={Match} />
 				</Switch>
 			</Router>
 		</div>
