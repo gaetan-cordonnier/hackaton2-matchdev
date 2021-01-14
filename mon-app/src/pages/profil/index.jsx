@@ -11,50 +11,45 @@ import {
   DetailsForm,
 } from "./style";
 
-//import test from "./test.json";
-const test = {
-  techno: "Js",
-  contrat: "cdd",
-  ville: "lille",
-  teletravail: "oui",
-  email: "test@gamail.fr",
-};
+import details from "./details.json";
 
 export default function ProfilPage() {
-  return (
-    <>
-      <Page>
-        <BlockProfil>
-          <Title> My profile</Title>
-        </BlockProfil>
-        <BlockP>
-          <Sentence>Check your informations</Sentence>
-        </BlockP>
-        <BlockDetails>
-          <ContainerDetails>
-            <DetailsH3>Techno :</DetailsH3>
-            <DetailsForm> {test.techno}</DetailsForm>
-          </ContainerDetails>
-          <ContainerDetails>
-            <DetailsH3>Contrat :</DetailsH3>
-            <DetailsForm>{test.contrat}</DetailsForm>
-          </ContainerDetails>
-          <ContainerDetails>
-            <DetailsH3>Ville :</DetailsH3>
-            <DetailsForm>{test.ville}</DetailsForm>
-          </ContainerDetails>
+  return details.map((detail, key) => {
+    return (
+      <>
+        <Page>
+          <BlockProfil>
+            <Title> My profile</Title>
+          </BlockProfil>
+          <BlockP>
+            <Sentence>Check your informations</Sentence>
+          </BlockP>
+          <BlockDetails>
+            <ContainerDetails>
+              <DetailsH3>Techno :</DetailsH3>
+              <DetailsForm> {detail.techno}</DetailsForm>
+            </ContainerDetails>
+            <ContainerDetails>
+              <DetailsH3>Contrat :</DetailsH3>
+              <DetailsForm>{detail.contrat}</DetailsForm>
+            </ContainerDetails>
+            <ContainerDetails>
+              <DetailsH3>Ville :</DetailsH3>
+              <DetailsForm>{detail.ville}</DetailsForm>
+            </ContainerDetails>
 
-          <ContainerDetails>
-            <DetailsH3>Télétravail :</DetailsH3>
-            <DetailsForm>{test.teletravail}</DetailsForm>
-          </ContainerDetails>
+            <ContainerDetails>
+              <DetailsH3>Télétravail :</DetailsH3>
+              <DetailsForm>{detail.teletravail}</DetailsForm>
+            </ContainerDetails>
 
-          <ContainerDetails>
-            <DetailsH3>email :</DetailsH3>
-            <DetailsForm>{test.email}</DetailsForm>
-          </ContainerDetails>
-        </BlockDetails>
-      </Page>
-    </>
-  );
+            <ContainerDetails>
+              <DetailsH3>email :</DetailsH3>
+              <DetailsForm>{detail.email}</DetailsForm>
+            </ContainerDetails>
+          </BlockDetails>
+        </Page>
+      </>
+    );
+  });
 }
