@@ -1,36 +1,17 @@
 const express = require("express");
-const Connection = require("mysql2/typings/mysql/lib/Connection");
+const Connection = require("mysql2");
 const app = express();
 const { db } = require("./config");
 
 app.use(express.json());
 
-const port = 5050;
-
 app.listen(5050, () => {
   console.log("Server is runing !");
 });
 
-app.get("/", (req, res, next) => {
+app.get("/", (req, res) => {
   console.log("Home Page");
   res.send("Welcome to Match♡Dev!");
-  next();
-});
-
-app.get("/api/user/:prenom", (req, res) => {
-  Connection.query(
-    "SELECT * from candidats WHERE prenom=?",
-    [req.params.prenom],
-    (err, results) => {
-      if (err) {
-        console.log(err);
-
-        res.status(500).send("Error retrieving data");
-      } else {
-        res.status(200).json(results);
-      }
-    }
-  );
 });
 
 app.post("/api/user", (req, res) => {
@@ -65,6 +46,18 @@ app.post("/api/user", (req, res) => {
       } else {
         res.status(200).send("New user saved!");
       }
+    }
+  );
+});
+
+app.get("/api/cards", (req, res) => {
+  db.query(
+    "SELECT a.idCand, a.idJob, c.idCompany, c.companyName, c.img, b.descriptionPreview, b.title, b.salary, a.distance, a.scoreNonSup from affinite a join jobs b on b.idJob=a.idJob join company c on c.idCompany=b.companyId where a.idCand=2 and a.likes is null order by a.scoreNonSup desc limit 10;",
+    (err, results) => {
+      if (err) {
+        return res.status(500).send("Error retrieving data");
+      }
+      return res.json(results);
     }
   );
 });
