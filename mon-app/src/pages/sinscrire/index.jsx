@@ -12,8 +12,10 @@ const Sinscrire = () => {
   const [selected, setSelected] = useState([]);
 
   const signup = (formData) => {
+    const sign = {...formData, skills: selected}
+    console.log(sign);
     axios
-      .post("http://localhost:5050/profile", formData)
+      .post("http://localhost:5050/profile", sign)
       .then(({ data }) => {
         console.log("Profile created");
         setDataSend(true);
