@@ -3,13 +3,13 @@ import { Device } from "../../assets/device/Device";
 
 export const BlockJobs = styled.div`
   @media ${Device.mobile} {
-    border: 1px solod green;
+    display: flex;
+    text-align: center;
+
+    border: 1px solid green;
     margin-left: 5vw;
     margin-right: 5vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-gap: 2vw;
+    margin-top: 10vh;
   }
 `;
 
