@@ -10,7 +10,15 @@ import {
   DetailsH3,
   DetailsForm,
 } from "./style";
-import test from "./test.json";
+
+//import test from "./test.json";
+const test = {
+  techno: "Js",
+  contrat: "cdd",
+  ville: "lille",
+  teletravail: "oui",
+  email: "test@gamail.fr",
+};
 
 export default function ProfilPage() {
   return (

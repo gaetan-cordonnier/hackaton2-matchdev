@@ -13,16 +13,17 @@ export const BlockProfil = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #220bab;
-    color: white;
-    height: 15vh;
+    background-color: #d7d7d7;
+    color: #fd1470;
+    height: 7vh;
     width: 100vw;
   }
 `;
 
 export const Title = styled.h2`
   @media ${Device.mobile} {
-    font-size: 3rem;
+    padding-top: 1vh;
+    font-size: 2.5rem;
   }
 `;
 
@@ -49,7 +50,7 @@ export const BlockDetails = styled.div`
     display: flex;
     flex-direction: column;
     background-color: #d7d7d7;
-    height: 61vh;
+    height: 60vh;
     width: 100vw;
     padding-top: 35vw;
   }
