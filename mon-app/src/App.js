@@ -1,21 +1,23 @@
-import Connection from './components/connection/index';
-import { Reset } from 'styled-reset';
+import React from "react";
+import { Reset } from "styled-reset";
+
 import Header from "./components/header/";
-import SeConnecter from "./components/seconnecter/index";  
+import Connection from "./components/connection/index";
 import Sinscrire from "./components/sinscrire/index";
-import './App.css';
+import SeConnecter from "./components/seconnecter/index";
+import CardCompany from "./components/card_company/index";
 
-function App() {
-  return (
-    <div className="App">
-      <Reset />
-      <Header />
-      <Connection />
-      <SeConnecter />
-      <Sinscrire />
-    </div>
-  );
+import "./App.css";
 
+export default function App() {
+	return (
+		<div className="App">
+			<Reset />
+			<Header />
+			<Connection />
+			<Sinscrire />
+			<SeConnecter />
+			<CardCompany />
+		</div>
+	);
 }
-
-export default App;

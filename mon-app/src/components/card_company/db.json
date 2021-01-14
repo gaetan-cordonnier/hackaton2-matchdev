@@ -1,0 +1,27 @@
+[
+	{
+		"name": "UBIK",
+		"imgUrl": "https://process.filestackapi.com/resize=width:600/auto_image/compress/iB6MEKUeT5OUfHEAip0t",
+		"url": "http://www.testurl.com"
+	},
+	{
+		"name": "SYMBOL-IT",
+		"imgUrl": "/images/company2.jpg",
+		"url": "http://www.testurl.com"
+	},
+	{
+		"name": "VADUO",
+		"imgUrl": "/images/company3.png",
+		"url": "http://www.testurl.com"
+	},
+	{
+		"name": "NIRYO",
+		"imgUrl": "/images/company4.png",
+		"url": "http://www.testurl.com"
+	},
+	{
+		"name": "RUNNING CARE",
+		"imgUrl": "/images/company5.jpg",
+		"url": "http://www.testurl.com"
+	}
+]
