@@ -7,6 +7,10 @@ export const Container = styled.div`
 	align-items: center;
 	background-color: #220bab;
 	height: 9vh;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 2;
 
 	.match {
 		height: 7vh;
