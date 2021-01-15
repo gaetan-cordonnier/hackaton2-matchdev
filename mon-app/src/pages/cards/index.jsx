@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import TinderCard from "react-tinder-card";
 import { Container } from "./style";
+import axios from "axios";
 
 const db = () => {
 	axios
