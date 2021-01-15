@@ -1,7 +1,30 @@
 import React, { useState, useMemo } from "react";
 import TinderCard from "react-tinder-card";
 import { Container } from "./style";
-import db from "./db.json";
+
+const db = () => {
+	axios
+		.get("http://localhost:5050/cards/")
+		.then(function (response) {
+			console.log(response.data);
+		})
+		.catch(function (error) {
+			console.log(error);
+		});
+};
+
+// const db = () => {
+// 	axios
+// 		.get("http://localhost:5000")
+// 		.then(function (response) {
+// 			axios.get("http://localhost:5050/cards").then(function (response) {
+// 				console.log(response.data);
+// 			});
+// 		})
+// 		.catch(function (error) {
+// 			console.log(error);
+// 		});
+// };
 
 const alreadyRemoved = [];
 let companysState = db; // Cela résout les problèmes de mise à jour de l'état de l'entreprise qui l'oblige à utiliser l'état actuel et non l'état qui était actif lors de la création de la carte.
