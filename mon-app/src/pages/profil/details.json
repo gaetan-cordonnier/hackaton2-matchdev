@@ -1,9 +1,10 @@
 [
   {
     "techno": "Js",
+    "prenom": "Karl",
     "contrat": "cdd",
     "ville": "lille",
-    "teletravail": "oui",
-    "email": "test@gamail.fr"
+    "anneeDeCode": "3",
+    "email": "test@gmail.fr"
   }
 ]

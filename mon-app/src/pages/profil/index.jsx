@@ -19,10 +19,10 @@ export default function ProfilPage() {
       <>
         <Page>
           <BlockProfil>
-            <Title> My profile</Title>
+            <Title> Bonjour {detail.prenom}! Bon match!</Title>
           </BlockProfil>
           <BlockP>
-            <Sentence>Check your informations</Sentence>
+            <Sentence>Vérifiez vos informations...</Sentence>
           </BlockP>
           <BlockDetails>
             <ContainerDetails>
@@ -39,8 +39,8 @@ export default function ProfilPage() {
             </ContainerDetails>
 
             <ContainerDetails>
-              <DetailsH3>Télétravail :</DetailsH3>
-              <DetailsForm>{detail.teletravail}</DetailsForm>
+              <DetailsH3>Année de code :</DetailsH3>
+              <DetailsForm>{detail.anneeDeCode}</DetailsForm>
             </ContainerDetails>
 
             <ContainerDetails>

@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Redirect } from "react-router-dom";
-import { FormContainer, Mandatory } from "./style";
+import {
+  FormContainer,
+  Mandatory,
+  Title,
+  Title2,
+  Container,
+  Label,
+  Button
+} from "./style";
 import dataTechnos from "./dataTechnos.json";
 import MultiSelect from "react-multi-select-component";
 import axios from "axios";
@@ -13,7 +21,7 @@ const Sinscrire = () => {
 
   const signup = (formData) => {
     axios
-      .post("http://localhost:5050/profile", formData)
+      .post("http://localhost:5050/user", formData)
       .then(({ data }) => {
         console.log("Profile created");
         setDataSend(true);
@@ -25,67 +33,69 @@ const Sinscrire = () => {
 
   return (
     <div>
+      <Title>MATCH DEV</Title>
       {dataSend ? (
         <Redirect to="/cards" />
       ) : (
         <FormContainer onSubmit={handleSubmit(signup)}>
-          <h2>Compléte ton profil</h2>
+          <Title2>Compléte ton profil</Title2>
+          <Container>
+            <Label>Prénom</Label>
+            <input name="prenom" ref={register({ required: true })} />
+            {errors.prenom && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
-          <label>Prénom</label>
-          <input name="prenom" ref={register({ required: true })} />
-          {errors.prenom && <Mandatory>Ce champs est obligatoire</Mandatory>}
+            <Label>Email</Label>
+            <input name="email" ref={register({ required: true })} />
+            {errors.email && <Mandatory>Ce champs est obligatoire</Mandatory>}
 
-          <label>Email</label>
-          <input name="email" ref={register({ required: true })} />
-          {errors.email && <Mandatory>Ce champs est obligatoire</Mandatory>}
-
-          <label>Mot de passe</label>
-          <input
-            type="password"
-            minlength="8"
-            name="password"
-            ref={register({ required: true })}
-          />
-          {errors.password && <Mandatory>Minimun 8 caractères</Mandatory>}
-
-          <div>
-            <h1>Technos</h1>
-            <MultiSelect
-              options={dataTechnos}
-              value={selected}
-              onChange={setSelected}
-              labelledBy={"Select"}
+            <Label>Mot de passe</Label>
+            <input
+              type="password"
+              minlength="8"
+              name="password"
               ref={register({ required: true })}
             />
-          </div>
+            {errors.password && <Mandatory>Minimun 8 caractères</Mandatory>}
 
-          <label>Type de contrat</label>
-          <select name="type fe contrat" ref={register({ required: true })}>
-            <option value="select"></option>
-            <option value="CDI">CDI</option>
-            <option value="CDD">CDD</option>
-            <option value="stage">Stage</option>
-            <option value="alternance">Alternance</option>
-            <option value="freelance">Freelance</option>
-          </select>
+            <div>
+              <Label>Technos</Label>
+              <MultiSelect
+                options={dataTechnos}
+                value={selected}
+                onChange={setSelected}
+                LabelledBy={"Select"}
+                ref={register({ required: true })}
+              />
+            </div>
 
-          <label>Code Postal</label>
-          <input name="codePostal" ref={register({ required: true })} />
-          {errors.codePostal && (
-            <Mandatory>Ce champs est obligatoire</Mandatory>
-          )}
+            <Label>Type de contrat</Label>
+            <select name="type fe contrat" ref={register({ required: true })}>
+              <option value="select"></option>
+              <option value="CDI">CDI</option>
+              <option value="CDD">CDD</option>
+              <option value="stage">Stage</option>
+              <option value="alternance">Alternance</option>
+              <option value="freelance">Freelance</option>
+            </select>
 
-          <label>Années de code</label>
-          <input name="année de code" ref={register({ required: true })} />
-          {errors.anneeDeCode && (
-            <Mandatory>Ce champs est obligatoire</Mandatory>
-          )}
+            <Label>Code Postal</Label>
+            <input name="codePostal" ref={register({ required: true })} />
+            {errors.codePostal && (
+              <Mandatory>Ce champs est obligatoire</Mandatory>
+            )}
 
-          <label>Salaire espéré</label>
-          <input name="salaire" ref={register({ required: true })} />
-          {errors.salaire && <Mandatory>Ce champs est obligatoire</Mandatory>}
+            <Label>Années de code</Label>
+            <input name="année de code" ref={register({ required: true })} />
+            {errors.anneeDeCode && (
+              <Mandatory>Ce champs est obligatoire</Mandatory>
+            )}
 
-          <input type="submit" value="ENVOYER" />
+            <Label>Salaire espéré</Label>
+            <input name="salaire" ref={register({ required: true })} />
+            {errors.salaire && <Mandatory>Ce champs est obligatoire</Mandatory>}
+
+            <Button type="submit" value="ENVOYER" />
+          </Container>
         </FormContainer>
       )}
     </div>
