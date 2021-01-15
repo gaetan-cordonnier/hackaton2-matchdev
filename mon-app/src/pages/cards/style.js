@@ -73,16 +73,22 @@ export const Container = styled.div`
 		background-position: center;
 	}
 
-	.description h2 {
-		color: #b7b7b7;
-		font-size: 1.2em;
-		margin: 10px;
-	}
-
 	.description p {
 		text-align: justify;
 		margin: 10px;
 		overflow: hidden;
+	}
+
+	.description h2 {
+		color: #a7a7a7;
+		font-size: 1.5em;
+		margin: 10px;
+	}
+
+	.description h3 {
+		color: #b7b7b7;
+		font-size: 1.2em;
+		margin: 10px;
 	}
 
 	.bottom {

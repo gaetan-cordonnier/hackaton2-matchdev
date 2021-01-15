@@ -44,9 +44,6 @@ export default function CardCompany() {
 		}
 	};
 
-	const description = companys.find((company) => company.descriptionPreview);
-	console.log(description);
-
 	return (
 		<Container>
 			<div className="cardContainer">
@@ -66,8 +63,10 @@ export default function CardCompany() {
 						</div>
 						<div className="descriptionContainer">
 							<div className="description">
-								<h2>Description de l'entreprise</h2>
+								<h3>Description de l'offre:</h3>
+								<h2>{company.title}</h2>
 								<p>{company.descriptionPreview}</p>
+								<h3>Salaire:{company.salary}</h3>
 							</div>
 						</div>
 					</TinderCard>
