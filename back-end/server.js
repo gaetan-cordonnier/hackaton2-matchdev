@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to Match♡Dev!");
 });
 
-app.post("/api/user", (req, res) => {
+app.post("/user", (req, res) => {
   const {
     prenom,
     email,
@@ -49,13 +49,16 @@ app.post("/api/user", (req, res) => {
     }
   );
 });
+("select a.idCand, a.idJob, c.idCompany, c.companyName, c.img, b.descriptionPreview, b.title, b.salary, a.distance, a.scoreNonSup from affinite a join jobs b on b.idJob=a.idJob join company c on c.idCompany=b.companyId where a.idCand=2 and a.likes is null order by a.scoreNonSup desc limit 10");
 
-app.get("/api/cards", (req, res) => {
+app.get("/cards", (req, res) => {
   db.query(
-    "SELECT a.idCand, a.idJob, c.idCompany, c.companyName, c.img, b.descriptionPreview, b.title, b.salary, a.distance, a.scoreNonSup from affinite a join jobs b on b.idJob=a.idJob join company c on c.idCompany=b.companyId where a.idCand=2 and a.likes is null order by a.scoreNonSup desc limit 10;",
+    "SELECT a.idCand, a.idJob, c.idCompany, c.companyName, c.img, b.descriptionPreview, b.title, b.salary, a.distance, a.scoreNonSup FROM affinite a JOIN jobs b ON b.idJob = a.idJob JOIN company c ON c.idCompany = b.companyId WHERE a.idCand = 2 AND a.likes IS NULL ORDER BY a.scoreNonSup DESC LIMIT 10",
     (err, results) => {
       if (err) {
-        return res.status(500).send("Error retrieving data");
+        res.status(500).send("Error retrieving data");
+
+        return;
       }
       return res.json(results);
     }
