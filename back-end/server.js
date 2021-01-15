@@ -102,7 +102,7 @@ app.get("/cards", (req, res) => {
 
 app.get("/profil/:prenom", (req, res) => {
 	db.query(
-		"SELECT prenom, email, technos, typeContrat, codePostal, anneesDeCode from candidats WHERE prenom =?",
+		"SELECT prenom, email, technos, typeContrat, codePostal, anneesDeCode, id from candidats WHERE prenom =?",
 		[req.params.prenom],
 
 		(err, results) => {
