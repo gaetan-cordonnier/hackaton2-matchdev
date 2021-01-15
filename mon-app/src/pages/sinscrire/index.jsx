@@ -23,6 +23,7 @@ const Sinscrire = () => {
 		axios
 			.post("http://localhost:5050/user", formData)
 			.then(({ data }) => {
+				console.log(formData);
 				console.log("Profile created");
 				setDataSend(true);
 			})
